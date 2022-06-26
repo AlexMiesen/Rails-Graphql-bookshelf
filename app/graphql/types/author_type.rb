@@ -10,9 +10,10 @@ class Types::AuthorType < Types::BaseObject
 	field :created_at, GraphQL::Types::ISO8601DateTime, null: false
 	field :full_name, String, null: true
 
-
 	def full_name
 		"#{object.first_name} #{object.last_name}"
-	end 
+	end
+
+	field :coordinates, Types::CoordinatesType, null: true 
 
 end 
