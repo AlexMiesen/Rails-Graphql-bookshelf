@@ -25,6 +25,12 @@ module Types
 
     def author(id:)
       Author.where(id: id).first
-    end  
+    end
+    
+    field :authors, [Types::AuthorType], null: true
+
+    def authors
+      Author.all
+    end 
   end
 end
