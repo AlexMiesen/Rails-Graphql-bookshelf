@@ -1,6 +1,7 @@
 module Types
   class MutationType < Types::BaseObject
 
+    #Method 1
     field :create_author, Types::AuthorType, null: true, description:  "a specification" do
       argument :first_name, String, required: false
       argument :last_name, String, required: false
@@ -10,6 +11,11 @@ module Types
 
     def create_author(first_name:, last_name:, yob:, is_alive:)
       Author.create(first_name: first_name, last_name: last_name, yob: yob, is_alive: is_alive)
-    end 
+    end
+
+    #Method 2 
+
+    #field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor
+
   end
 end
