@@ -13,8 +13,7 @@ module Types
     #   Author.create(first_name: first_name, last_name: last_name, yob: yob, is_alive: is_alive)
     # end
 
-    #Method 2 
-    
+    #Method 2 (create a seperate file create_author.rb)
     field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor
 
   end
