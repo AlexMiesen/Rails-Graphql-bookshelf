@@ -16,7 +16,7 @@ module Types
     #Method 2 (create a seperate file create_author.rb)
     field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor
 
-
+    #Method 1 for updating
     field :update_author, Boolean, null: false, description: "Update author" do
       argument :author, Types::AuthorInputType, required: true
     end 
