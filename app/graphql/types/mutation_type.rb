@@ -31,7 +31,7 @@ module Types
     end
 
     def delete_author(id:)
-      Author.delete(id)
+      Author.destroy(id)
       true
     end
 
