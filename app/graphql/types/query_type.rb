@@ -24,6 +24,13 @@ module Types
       context[:current_user]
     end
 
+    field :logout, Boolean, null: false, description: "Log out a user"
+
+    def logout
+      Session.where(id: context[:session_id]).destroy_all
+      true
+    end 
+
 
     field :author, Types::AuthorType, null: true, 
       description: "Returns one Author instance"  do
