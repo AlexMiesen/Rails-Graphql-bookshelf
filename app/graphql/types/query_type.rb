@@ -18,6 +18,12 @@ module Types
       end 
     end
 
+    field :current_user, Types::UserType, null: true, description: "The current user"
+
+    def current_user
+      context[:current_user]
+    end
+
 
     field :author, Types::AuthorType, null: true, 
       description: "Returns one Author instance"  do

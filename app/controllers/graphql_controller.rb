@@ -8,8 +8,12 @@ class GraphqlController < ApplicationController
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+
+    session = Session.where(key: request.headers['Authorization']).first #This Authorisation needs to be added in the HTTP Headers. 'Header name' will have Authorisation. Header value will have the session key. 
+    Rails.logger.info "logged in as #{session&.user&.email}"
+
     context = {
-      time: Time.now
+      current_user: session&.user
       # Query context goes here, for example:
       # current_user: current_user,
     }
